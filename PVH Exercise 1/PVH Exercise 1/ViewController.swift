@@ -9,17 +9,37 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var datePicker: UIDatePicker!
+    var startDateView: ScheduleDetailView!
+    var endDateView: ScheduleDetailView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        configureDatePicker()
+        configureDetailViews()
+        configureNavigationBar()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // MARK: - Setup & Configuration
+    func configureDatePicker() {
+        datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.minimumDate = Date()
     }
-
+    
+    func configureDetailViews() {
+        startDateView = ScheduleDetailView(inputText: "Begin:")
+        endDateView = ScheduleDetailView(inputText: "End Date:")
+    }
+    
+    func configureNavigationBar() {
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: UIFontWeightBold)]
+        navigationController?.navigationBar.topItem?.title = "Schedule"
+        navigationController?.navigationBar.barStyle = .black
+    }
 
 }
 
