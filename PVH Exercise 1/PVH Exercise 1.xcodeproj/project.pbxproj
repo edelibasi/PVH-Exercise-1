@@ -16,7 +16,7 @@
 		3437BD051F62C65A0037E901 /* PVH_Exercise_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3437BD041F62C65A0037E901 /* PVH_Exercise_1Tests.swift */; };
 		3437BD101F62C65A0037E901 /* PVH_Exercise_1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3437BD0F1F62C65A0037E901 /* PVH_Exercise_1UITests.swift */; };
 		3437BD1F1F62C9C80037E901 /* ScheduleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3437BD1E1F62C9C80037E901 /* ScheduleDetailView.swift */; };
-		34CD892F1F684FDF001C32AE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CD892E1F684FDF001C32AE /* Extensions.swift */; };
+		34CD892F1F684FDF001C32AE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CD892E1F684FDF001C32AE /* Constants.swift */; };
 		98664220DF382CB1D5440581 /* Pods_PVH_Exercise_1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E116236A5D19E4539C9A32 /* Pods_PVH_Exercise_1UITests.framework */; };
 		CD1EB1C54CFEBCC2D6C2BE5A /* Pods_PVH_Exercise_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B90EBA0B053359ABF82C98 /* Pods_PVH_Exercise_1.framework */; };
 /* End PBXBuildFile section */
@@ -55,7 +55,7 @@
 		3437BD0F1F62C65A0037E901 /* PVH_Exercise_1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVH_Exercise_1UITests.swift; sourceTree = "<group>"; };
 		3437BD111F62C65A0037E901 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3437BD1E1F62C9C80037E901 /* ScheduleDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDetailView.swift; sourceTree = "<group>"; };
-		34CD892E1F684FDF001C32AE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		34CD892E1F684FDF001C32AE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		37E116236A5D19E4539C9A32 /* Pods_PVH_Exercise_1UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PVH_Exercise_1UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7511C5014401F5921A213302 /* Pods-PVH Exercise 1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PVH Exercise 1Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PVH Exercise 1Tests/Pods-PVH Exercise 1Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C9110C2A74148624E11602C5 /* Pods_PVH_Exercise_1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PVH_Exercise_1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,7 +156,7 @@
 		34CD892B1F6843FF001C32AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				34CD892E1F684FDF001C32AE /* Extensions.swift */,
+				34CD892E1F684FDF001C32AE /* Constants.swift */,
 				3437BCF61F62C65A0037E901 /* Assets.xcassets */,
 				3437BCF81F62C65A0037E901 /* LaunchScreen.storyboard */,
 				3437BCFB1F62C65A0037E901 /* Info.plist */,
@@ -482,7 +482,7 @@
 				3437BCF21F62C65A0037E901 /* ViewController.swift in Sources */,
 				3437BCF01F62C65A0037E901 /* AppDelegate.swift in Sources */,
 				3437BD1F1F62C9C80037E901 /* ScheduleDetailView.swift in Sources */,
-				34CD892F1F684FDF001C32AE /* Extensions.swift in Sources */,
+				34CD892F1F684FDF001C32AE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

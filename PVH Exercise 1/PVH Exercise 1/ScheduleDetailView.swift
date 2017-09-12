@@ -10,15 +10,15 @@ import UIKit
 
 class ScheduleDetailView: UIView {
 
-    let inputLabel = UILabel()
-    let inputTextField = UITextField()
+    let leftLabel = UILabel()
+    let rightLabel = UILabel()
     
-    init(inputText: String) {
-        inputLabel.text = inputText
+    init(leftText: String) {
+        leftLabel.text = leftText
         super.init(frame: .zero)
         
         addSubviews()
-        customizeSubviews()
+        customizeLabels()
         setupConstraints()
     }
     
@@ -27,32 +27,29 @@ class ScheduleDetailView: UIView {
     }
     
     func addSubviews() {
-        self.addSubview(inputLabel)
-        self.addSubview(inputTextField)
+        self.addSubview(leftLabel)
+        self.addSubview(rightLabel)
     }
     
-    func customizeSubviews() {
-        inputLabel.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)
-        inputLabel.textColor = .black
-        inputLabel.translatesAutoresizingMaskIntoConstraints = false
-        inputLabel.sizeToFit()
+    func customizeLabels() {
+        leftLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)
+        leftLabel.textColor = .black
+        leftLabel.translatesAutoresizingMaskIntoConstraints = false
+        leftLabel.sizeToFit()
         
-        inputTextField.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)
-        inputTextField.textColor = .black
-        inputTextField.borderStyle = .none
-        inputTextField.textAlignment = .right
-        inputTextField.translatesAutoresizingMaskIntoConstraints = false
+        rightLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)
+        rightLabel.textColor = .black
+        rightLabel.translatesAutoresizingMaskIntoConstraints = false
+        rightLabel.sizeToFit()
     }
 
     func setupConstraints() {
-        let leftLabelVerticalConstraint = NSLayoutConstraint(item: inputLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
-        let leftLabelHorizontalConstraint = NSLayoutConstraint(item: inputLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 30)
+        let leftLabelVerticalConstraint = NSLayoutConstraint(item: leftLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
+        let leftLabelHorizontalConstraint = NSLayoutConstraint(item: leftLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 30)
         
-        let rightLabelWidthConstraint = NSLayoutConstraint(item: inputTextField, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.frame.width / 3)
-        let rightLabelTopConstraint = NSLayoutConstraint(item: inputTextField, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
-        let rightLabelBottomConstraint = NSLayoutConstraint(item: inputTextField, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
-        let rightLabelHorizontalConstraint = NSLayoutConstraint(item: inputTextField, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: -30)
+        let rightLabelVerticalConstraint = NSLayoutConstraint(item: rightLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
+        let rightLabelHorizontalConstraint = NSLayoutConstraint(item: rightLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: -30)
         
-        self.addConstraints([leftLabelVerticalConstraint, leftLabelHorizontalConstraint, rightLabelWidthConstraint, rightLabelTopConstraint, rightLabelBottomConstraint, rightLabelHorizontalConstraint])
+        self.addConstraints([leftLabelVerticalConstraint, leftLabelHorizontalConstraint, rightLabelVerticalConstraint, rightLabelHorizontalConstraint])
     }
 }

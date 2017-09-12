@@ -7,4 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
+public struct LayoutConstants {
+    static let detailViewHeight: CGFloat = 90
+    static let datePickerHeight: CGFloat = 220
+}
