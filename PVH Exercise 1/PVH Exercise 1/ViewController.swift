@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     let datePicker = UIDatePicker()
     let startDateView = ScheduleDetailView(leftText: "Begin:")
     let endDateView = ScheduleDetailView(leftText: "End Date:")
+    let dateFormatter = DateFormatter(dateFormat: "dd MMMM yyyy")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +74,7 @@ class ViewController: UIViewController {
     
     // MARK: - Actions
     func clearPressed() {
+        
     }
 }
 
