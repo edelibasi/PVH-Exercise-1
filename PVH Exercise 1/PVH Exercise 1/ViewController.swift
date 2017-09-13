@@ -34,8 +34,11 @@ class ViewController: UIViewController {
     func configureDetailViews() {
         startDateView.translatesAutoresizingMaskIntoConstraints = false
         startDateView.setNewDefaultValue(Date().stringValue)
+        startDateView.valueLabel.text = startDateView.defaultValue
+        
         endDateView.translatesAutoresizingMaskIntoConstraints = false
-        endDateView.setNewDefaultValue(Date().  stringValue)
+        endDateView.setNewDefaultValue(Date().addingDays(7).stringValue)
+        endDateView.valueLabel.text = endDateView.defaultValue
     }
     
     func configureNavigationBar() {

@@ -19,12 +19,13 @@ extension DateFormatter {
 extension Date {
     var stringValue: String {
         let dateFormatter = DateFormatter(dateFormat: "dd MMMM yyyy")
-        return self == Date() ? "Today" : dateFormatter.string(from: self)
+        let comparison = Calendar.current.compare(self, to: Date(), toGranularity: .minute)
+        return comparison == ComparisonResult.orderedSame ? "Today" : dateFormatter.string(from: self)
     }
     
-    func addingDays(_ days: Int) -> Date? {
+    func addingDays(_ days: Int) -> Date {
         var dateComponents = DateComponents()
         dateComponents.day = days
-        return Calendar.current.date(byAdding: dateComponents, to: self)
+        return Calendar.current.date(byAdding: dateComponents, to: self) ?? Date()
     }
 }
