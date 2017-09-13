@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.datePickerMode = .date
         datePicker.minimumDate = Date()
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged(datePicker:)), for: .valueChanged)
     }
 
     func configureDetailViews() {
@@ -78,7 +79,17 @@ class ViewController: UIViewController {
     
     // MARK: - Actions
     func clearPressed() {
-        
+        datePicker.setDate(Date(), animated: true)
+        startDateView.valueLabel.text = startDateView.defaultValue
+        endDateView.valueLabel.text = endDateView.defaultValue
+    }
+    
+    func datePickerValueChanged(datePicker: UIDatePicker) {
+        let startDateString = datePicker.date.stringValue
+        let endDateString = datePicker.date.addingDays(7).stringValue
+
+        startDateView.valueLabel.text = startDateString
+        endDateView.valueLabel.text = endDateString
     }
 }
 
