@@ -15,3 +15,16 @@ extension DateFormatter {
         self.dateFormat =  dateFormat
     }
 }
+
+extension Date {
+    var stringValue: String {
+        let dateFormatter = DateFormatter(dateFormat: "dd MMMM yyyy")
+        return self == Date() ? "Today" : dateFormatter.string(from: self)
+    }
+    
+    func addingDays(_ days: Int) -> Date? {
+        var dateComponents = DateComponents()
+        dateComponents.day = days
+        return Calendar.current.date(byAdding: dateComponents, to: self)
+    }
+}

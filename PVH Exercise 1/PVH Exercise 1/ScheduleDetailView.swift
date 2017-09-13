@@ -12,6 +12,7 @@ class ScheduleDetailView: UIView {
 
     let inputLabel = UILabel()
     let valueLabel = UILabel()
+    var defaultValue = ""
     
     init(leftText: String) {
         inputLabel.text = leftText
@@ -26,6 +27,7 @@ class ScheduleDetailView: UIView {
         super.init(coder: aDecoder)
     }
     
+    // MARK: - Setup & Configuration
     func addSubviews() {
         self.addSubview(inputLabel)
         self.addSubview(valueLabel)
@@ -51,5 +53,14 @@ class ScheduleDetailView: UIView {
         let rightLabelHorizontalConstraint = NSLayoutConstraint(item: valueLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: -30)
         
         self.addConstraints([leftLabelVerticalConstraint, leftLabelHorizontalConstraint, rightLabelVerticalConstraint, rightLabelHorizontalConstraint])
+    }
+    
+    // MARK: - Helper Methods
+    func setNewDefaultValue(_ defaultValue: String) {
+        self.defaultValue = defaultValue
+    }
+    
+    func resetValueLabel() {
+        valueLabel.text = defaultValue
     }
 }
