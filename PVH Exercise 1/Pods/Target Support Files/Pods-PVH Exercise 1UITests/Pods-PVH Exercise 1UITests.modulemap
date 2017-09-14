@@ -1,6 +1,0 @@
-framework module Pods_PVH_Exercise_1UITests {
-  umbrella header "Pods-PVH Exercise 1UITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
