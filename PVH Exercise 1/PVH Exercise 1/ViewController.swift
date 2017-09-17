@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let datePicker = UIDatePicker()
-    let startDateView = ScheduleDetailView(leftText: "Begin:")
+    let beginDateView = ScheduleDetailView(leftText: "Begin:")
     let endDateView = ScheduleDetailView(leftText: "End Date:")
 
     override func viewDidLoad() {
@@ -33,9 +33,9 @@ class ViewController: UIViewController {
     }
 
     func configureDetailViews() {
-        startDateView.translatesAutoresizingMaskIntoConstraints = false
-        startDateView.setNewDefaultValue(Date().stringValue)
-        startDateView.valueLabel.text = startDateView.defaultValue
+        beginDateView.translatesAutoresizingMaskIntoConstraints = false
+        beginDateView.setNewDefaultValue(Date().stringValue)
+        beginDateView.valueLabel.text = beginDateView.defaultValue
         
         endDateView.translatesAutoresizingMaskIntoConstraints = false
         endDateView.setNewDefaultValue(Date().addingDays(7).stringValue)
@@ -53,20 +53,20 @@ class ViewController: UIViewController {
     }
     
     func addSubviews() {
-        view.addSubview(startDateView)
+        view.addSubview(beginDateView)
         view.addSubview(datePicker)
         view.addSubview(endDateView)
     }
     
     func setupConstraints() {
-        let startDateLeadingConstraint = NSLayoutConstraint(item: startDateView, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 0)
-        let startDateTrailingConstraint = NSLayoutConstraint(item: startDateView, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1, constant: 0)
-        let startDateTopConstraint = NSLayoutConstraint(item: startDateView, attribute: .top, relatedBy: .equal, toItem: self.topLayoutGuide, attribute: .bottom, multiplier: 1, constant: 0)
-        let startDateHeightConstraint = NSLayoutConstraint(item: startDateView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: LayoutConstants.detailViewHeight)
+        let startDateLeadingConstraint = NSLayoutConstraint(item: beginDateView, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 0)
+        let startDateTrailingConstraint = NSLayoutConstraint(item: beginDateView, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1, constant: 0)
+        let startDateTopConstraint = NSLayoutConstraint(item: beginDateView, attribute: .top, relatedBy: .equal, toItem: self.topLayoutGuide, attribute: .bottom, multiplier: 1, constant: 0)
+        let startDateHeightConstraint = NSLayoutConstraint(item: beginDateView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: LayoutConstants.detailViewHeight)
         
         let datePickerLeadingConstraint = NSLayoutConstraint(item: datePicker, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 0)
         let datePickerTrailingConstraint = NSLayoutConstraint(item: datePicker, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1, constant: 0)
-        let datePickerTopConstraint = NSLayoutConstraint(item: datePicker, attribute: .top, relatedBy: .equal, toItem: startDateView, attribute: .bottom, multiplier: 1, constant: 0)
+        let datePickerTopConstraint = NSLayoutConstraint(item: datePicker, attribute: .top, relatedBy: .equal, toItem: beginDateView, attribute: .bottom, multiplier: 1, constant: 0)
         let datePickerHeightConstraint = NSLayoutConstraint(item: datePicker, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: LayoutConstants.datePickerHeight)
         
         let endDateLeadingConstraint = NSLayoutConstraint(item: endDateView, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 0)
@@ -80,7 +80,7 @@ class ViewController: UIViewController {
     // MARK: - Actions
     func clearPressed() {
         datePicker.setDate(Date(), animated: true)
-        startDateView.valueLabel.text = startDateView.defaultValue
+        beginDateView.valueLabel.text = beginDateView.defaultValue
         endDateView.valueLabel.text = endDateView.defaultValue
     }
     
@@ -88,7 +88,7 @@ class ViewController: UIViewController {
         let startDateString = datePicker.date.stringValue
         let endDateString = datePicker.date.addingDays(7).stringValue
 
-        startDateView.valueLabel.text = startDateString
+        beginDateView.valueLabel.text = startDateString
         endDateView.valueLabel.text = endDateString
     }
 }
